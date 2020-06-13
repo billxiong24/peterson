@@ -5,7 +5,7 @@ static int num = 0;
 const int TARGET = 4000000;
 PetersonLock pl;
 
-void func(short ind) {
+void func(int ind) {
 
     for (int i = 0; i < TARGET; i++) {
         pl.lock(ind);

@@ -3,9 +3,9 @@
 
 PetersonLock::PetersonLock() : flag(), turn(0) {}
 
-void PetersonLock::lock(short ind) {
+void PetersonLock::lock(int ind) {
     assert(ind == 0 || ind == 1);
-    short other = !ind;
+    int other = !ind;
 
     /**
      * Can be relaxed memory order, since reads from flag[] occur after turn.exchange(),
@@ -71,6 +71,6 @@ void PetersonLock::lock(short ind) {
     }
 }
 
-void PetersonLock::unlock(short ind) {
+void PetersonLock::unlock(int ind) {
     flag[ind].store(0, std::memory_order_release);
 }

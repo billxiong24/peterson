@@ -10,12 +10,12 @@ class PetersonLock {
         PetersonLock();
         ~PetersonLock() = default;
 
-        void lock(short ind); 
-        void unlock(short ind);
+        void lock(int ind); 
+        void unlock(int ind);
 
     private:
-        std::atomic<short> flag[2];
-        std::atomic<short> turn;
+        std::atomic<int> flag[2];
+        std::atomic<int> turn;
 };
 
 #endif
